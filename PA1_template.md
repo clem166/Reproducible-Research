@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r data_read, results="hide", warning=FALSE, message=FALSE}
-#loading packages
+# loading packages
 library(dplyr)
 library(lubridate)
 library(ggplot2)
