@@ -16,7 +16,7 @@ library(lubridate)
 library(ggplot2)
 
 #set wd
-setwd("C:/Users/theGameTrader/Documents/R/coursera/reproducible research")
+setwd("")
 #reading in data
 activity= read.csv("./activity.csv")
 #formatting date to be a date variable instead of factor
