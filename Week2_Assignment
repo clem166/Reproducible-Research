@@ -1,19 +1,34 @@
+---
+title: "Reproducible Research Week 2 Assignment"
+author: "Clement Yeung"
+date: "May 5, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r data_read, results="hide", warning=FALSE, message=FALSE}
 #loading packages
 library(dplyr)
 library(lubridate)
 library(ggplot2)
 
 #set wd
-setwd("")
-
+setwd("C:/Users/theGameTrader/Documents/R/coursera/reproducible research")
 #reading in data
 activity= read.csv("./activity.csv")
 #formatting date to be a date variable instead of factor
 activity$date = ymd(activity$date) 
-
+```
+```{r summary}
 #analysis to check data type
 head(activity)
 str(activity)
+```
+
+```{r}
 
 #calculating sum, mean and median number of steps
 activity_summary =  activity %>%
@@ -22,7 +37,6 @@ activity_summary =  activity %>%
 
 #histogram
 hist(activity_summary$sum)
-hist(activity_summary$median)
 
 #calulating mean number of steps by time interval
 activity_summary2 = activity %>%
@@ -75,3 +89,5 @@ par(mfrow=c(2,1))
 ggplot(data=split_summary, aes(x=interval, y=mean, group=day_type, colour=day_type)) +
   geom_line() +
   facet_grid(~day_type,scales="free")
+
+```
